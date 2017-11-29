@@ -4,25 +4,29 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="unit")
-public class Unit {
-
+@Table(name="station")
+public class Station {
+	
+	//pk
 	private String id;
 	
+	//station name
 	private String name;
-	
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
 }
