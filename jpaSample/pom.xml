@@ -18,15 +18,7 @@
 	<properties>
 		<!-- Spring Boot -->
 		<spring-boot.version>1.5.6.RELEASE</spring-boot.version>
-		<!-- for maven plugin -->
 		<java.version>1.8</java.version>
-		<maven_compiler_plugin_version>3.5</maven_compiler_plugin_version>
-		<maven_source_plugin_version>2.1.1</maven_source_plugin_version>
-		<maven_jar_plugin_version>2.6</maven_jar_plugin_version>
-		<maven_war_plugin_version>2.6</maven_war_plugin_version>
-		<maven_install_plugin_version>2.4</maven_install_plugin_version>
-		<maven_clean_plugin_version>3.0.0</maven_clean_plugin_version>
-		<maven_deploy_plugin_version>2.7</maven_deploy_plugin_version>
 	</properties>
 
 	<dependencies>
@@ -55,7 +47,6 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 
 		<!-- 动态日志 -->
