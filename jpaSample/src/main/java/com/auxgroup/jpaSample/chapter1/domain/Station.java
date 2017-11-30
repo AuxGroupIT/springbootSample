@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="station")
+@Table(name="chap1_station")
 public class Station extends IdEntity{
 	
 	private static final long serialVersionUID = 1011518249396383864L;
