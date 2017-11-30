@@ -5,21 +5,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="station")
-public class Station {
+public class Station extends IdEntity{
 	
-	//pk
-	private String id;
+	private static final long serialVersionUID = 1011518249396383864L;
 	
-	//station name
 	private String name;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;

@@ -1,6 +1,4 @@
-spring:
-  application:
-    name: jpaSample
+spring: 
   profiles:
     active: dev
 server: 
