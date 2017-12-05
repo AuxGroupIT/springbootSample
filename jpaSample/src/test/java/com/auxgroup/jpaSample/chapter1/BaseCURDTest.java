@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.auxgroup.jpaSample.chapter1.dao.StationDao;
 import com.auxgroup.jpaSample.chapter1.domain.Station;
-import com.auxgroup.jpaSample.chapter1.repostity.StationDao;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

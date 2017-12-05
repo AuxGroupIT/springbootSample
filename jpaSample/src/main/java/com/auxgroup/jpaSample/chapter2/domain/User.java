@@ -4,6 +4,9 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -15,18 +18,9 @@ public class User extends IdEntity{
 	
 	private static final long serialVersionUID = -4105391872344213193L;
 	
-	private String accont;
 	private String name;
 	
-	private Station stations;
-
-	public String getAccont() {
-		return accont;
-	}
-
-	public void setAccont(String accont) {
-		this.accont = accont;
-	}
+	private Station station;
 
 	public String getName() {
 		return name;
@@ -34,6 +28,17 @@ public class User extends IdEntity{
 
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}
+	
+	@ManyToOne(cascade = {CascadeType.ALL} , fetch = FetchType.LAZY)
+    @JoinColumn(name = "station_id")
+	public Station getStation() {
+		return station;
+	}
+	
+	public void setStation(Station station) {
+		this.station = station;
+	}
+	
 
 }

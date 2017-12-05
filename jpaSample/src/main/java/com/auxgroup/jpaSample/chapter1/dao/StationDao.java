@@ -1,4 +1,4 @@
-package com.auxgroup.jpaSample.chapter1.repostity;
+package com.auxgroup.jpaSample.chapter1.dao;
 
 import java.util.List;
 
