@@ -1,13 +1,11 @@
 package com.auxgroup.jpaSample.chapter2.domain;
 
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.auxgroup.jpaSample.chapter1.domain.IdEntity;
@@ -30,7 +28,7 @@ public class User extends IdEntity{
 		this.name = name;
 	}
 	
-	@ManyToOne(cascade = {CascadeType.ALL} , fetch = FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     @JoinColumn(name = "station_id")
 	public Station getStation() {
 		return station;

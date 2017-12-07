@@ -1,10 +1,15 @@
 package com.auxgroup.jpaSample.chapter2.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.BatchSize;
 
 import com.auxgroup.jpaSample.chapter1.domain.IdEntity;
 
@@ -16,7 +21,7 @@ public class Station extends IdEntity{
 	
 	private String name;
 	
-	private Set<User> users;
+	private Set<User> users = new HashSet<User>();
 
 	public String getName() {
 		return name;
@@ -26,7 +31,8 @@ public class Station extends IdEntity{
 		this.name = name;
 	}
 	
-	@OneToMany(mappedBy = "station")
+	@OneToMany(mappedBy = "station" , cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@BatchSize(size = 50)
 	public Set<User> getUsers() {
 		return users;
 	}
