@@ -7,45 +7,59 @@ import javax.annotation.Resource;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.stereotype.Repository;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.auxgroup.jpaSample.chapter1.dao.StationDao;
-import com.auxgroup.jpaSample.chapter1.domain.Station;
+import com.auxgroup.jpaSample.chapter1.dao.UnitDao;
+import com.auxgroup.jpaSample.chapter1.domain.Unit;
+
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest()
 public class BaseCURDTest {
 	
 	@Resource
-	private StationDao stationDao;
+	private UnitDao unitDao;
 	
 	@Test
 	public void curdTest(){
 		
 		//delete all
-		stationDao.deleteAll();
+		unitDao.deleteAll();
 		
 		//create
-		Station station = new Station();
-		station.setName("stationname1");
-		stationDao.save(station);
+		Unit unit = new Unit();
+		unit.setName("unit_name1");
+		unitDao.save(unit);
 		
 		//find
-		List<Station> list = stationDao.findAll();
+		List<Unit> list = unitDao.findAll();
 		
 		Assert.assertEquals(1, list.size());
 		
 		//update
-		station.setName("newname");
-		stationDao.save(station);
+		unit.setName("newname");
+		unitDao.save(unit);
 		
-		List<Station> list1 = stationDao.findByName("newname");
-		Station station1 = list1.get(0);
+		List<Unit> list1 = unitDao.findByName("newname");
+		Unit unit1 = list1.get(0);
 		
-		Assert.assertEquals("newname", station1.getName());
-		Assert.assertEquals(station.getId() , station1.getId());
+		Assert.assertEquals("newname", unit1.getName());
+		Assert.assertEquals(unit.getId() , unit1.getId());
 		
+	}
+	
+	@Test
+	public void JPAQueryMethodExample() {
+		
+		List<Unit> lists = this.unitDao.findByNameLike("java%");
+		
+		for (Unit unit : lists) {
+			System.out.println(unit.getName());
+		}
 	}
 
 }
