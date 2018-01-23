@@ -1,4 +1,4 @@
-package com.auxgroup.jpaSample.chapter2.domain;
+package com.auxgroup.jpaSample.base.domain;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,10 +11,10 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.BatchSize;
 
-import com.auxgroup.jpaSample.chapter1.domain.IdEntity;
+import com.auxgroup.jpaSample.base.domain.IdEntity;
 
 @Entity
-@Table(name="chap2_station")
+@Table(name="station")
 public class Station extends IdEntity{
 	
 	private static final long serialVersionUID = 1011518249396383864L;

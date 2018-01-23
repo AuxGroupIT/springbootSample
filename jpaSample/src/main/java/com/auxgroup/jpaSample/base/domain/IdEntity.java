@@ -1,4 +1,4 @@
-package com.auxgroup.jpaSample.chapter1.domain;
+package com.auxgroup.jpaSample.base.domain;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.auxgroup.jpaSample.chapter2.domain;
+package com.auxgroup.jpaSample.base.domain;
 
 
 import javax.persistence.CascadeType;
@@ -8,10 +8,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.auxgroup.jpaSample.chapter1.domain.IdEntity;
+import com.auxgroup.jpaSample.base.domain.IdEntity;
+
 
 @Entity
-@Table(name="chap2_user")
+@Table(name="user")
 public class User extends IdEntity{
 	
 	private static final long serialVersionUID = -4105391872344213193L;
