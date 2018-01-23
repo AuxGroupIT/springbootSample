@@ -2,7 +2,7 @@ package com.auxgroup.jpaSample.chapter2.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.auxgroup.jpaSample.chapter2.domain.User;
+import com.auxgroup.jpaSample.base.domain.User;
 
 public interface UserDao extends JpaRepository<User , String>{
 	

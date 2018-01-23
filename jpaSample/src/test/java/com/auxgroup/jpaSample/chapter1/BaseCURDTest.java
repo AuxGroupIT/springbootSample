@@ -13,8 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.stereotype.Repository;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.auxgroup.jpaSample.base.domain.Unit;
 import com.auxgroup.jpaSample.chapter1.dao.UnitDao;
-import com.auxgroup.jpaSample.chapter1.domain.Unit;
 
 
 @RunWith(SpringRunner.class)

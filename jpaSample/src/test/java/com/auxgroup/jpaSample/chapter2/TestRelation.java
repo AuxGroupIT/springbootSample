@@ -15,17 +15,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.auxgroup.jpaSample.base.domain.Station;
+import com.auxgroup.jpaSample.base.domain.User;
 import com.auxgroup.jpaSample.chapter2.dao.StationDao;
 import com.auxgroup.jpaSample.chapter2.dao.UserDao;
-import com.auxgroup.jpaSample.chapter2.domain.Station;
-import com.auxgroup.jpaSample.chapter2.domain.User;
 import com.auxgroup.jpaSample.chapter2.service.StationService;
 import com.auxgroup.jpaSample.chapter2.service.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Transactional()
-@Rollback(false)
 public class TestRelation {
 
 	@Resource
@@ -40,6 +38,7 @@ public class TestRelation {
 	@Resource(name="chapter2Stationdao")
 	private StationDao stationDao;
 	
+	@Test
 	public void initUsers() {
 		
 		Station station = new Station();
@@ -59,6 +58,7 @@ public class TestRelation {
 	}
 	
 	@Test
+	@Transactional
 	public void test_ONE_TO_MANY() {
 		
 		Station s = this.stationDao.findByName("java_engineer");

@@ -7,10 +7,10 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.auxgroup.jpaSample.base.domain.Station;
+import com.auxgroup.jpaSample.base.domain.User;
 import com.auxgroup.jpaSample.chapter2.dao.StationDao;
 import com.auxgroup.jpaSample.chapter2.dao.UserDao;
-import com.auxgroup.jpaSample.chapter2.domain.Station;
-import com.auxgroup.jpaSample.chapter2.domain.User;
 
 @Service
 @Transactional

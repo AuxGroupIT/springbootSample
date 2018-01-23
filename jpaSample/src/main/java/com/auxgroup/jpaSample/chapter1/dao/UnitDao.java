@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.auxgroup.jpaSample.chapter1.domain.Unit;
+import com.auxgroup.jpaSample.base.domain.Unit;
 
 public interface UnitDao  extends JpaRepository<Unit , String>{
 	
