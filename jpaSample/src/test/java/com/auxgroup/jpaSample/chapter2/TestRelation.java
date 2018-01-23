@@ -58,14 +58,9 @@ public class TestRelation {
 	}
 	
 	@Test
-	@Transactional
+	//@Transactional //不加事务，则find之后，连接就关闭了
 	public void test_ONE_TO_MANY() {
-		
 		Station s = this.stationDao.findByName("java_engineer");
-		
-		//直接可以获取
-		//Set<User> users = s.getUsers();
-		
 		Assert.assertEquals(2, s.getUsers().size());
 	}
 	
